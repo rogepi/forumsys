@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.header {
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.nav {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.header .nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.header .nav li {
+  display: inline-block;
+}
+
+.header .nav a {
+  font-weight: bolder;
+  font-size: 20px;
+  color: black;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.main .left {
+  float: left;
+  width: 30%;
+  height: 660px;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.main input {
+  display: none;
+}
+
+.title {
+  background-color: darkgrey;
+  border-radius: 0.5em 0.5em 0em 0em;
+  text-align: center;
+}
+
+.title p {
+  font-weight: bolder;
+  font-size: 19px;
+}
+
+.lleft a {
+  color: black;
+  text-decoration: none;
+}
+
+.rleft {
+  float: left;
+  width: 50%;
+}
+
+.rleft a {
+  color: black;
+  text-decoration: none;
+}
+
+.rright {
+  float: left;
+  width: 50%;
+}
+
+.rright a {
+  color: black;
+  text-decoration: none;
+}
+
+.main .right_top {
+  float: left;
+  margin-left: 10px;
+  width: 69%;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.main .right_bottom {
+  margin-top: 10px;
+  float: left;
+  margin-left: 10px;
+  width: 69%;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.main::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.footer {
+  text-align: center;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.footer p {
+  margin-top: 35px;
+  font-weight: bolder;
+  font-size: 18px;
+}

@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.header {
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.nav {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.header .nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.header .nav li {
+  display: inline-block;
+}
+
+.header .nav a {
+  font-weight: bolder;
+  font-size: 20px;
+  color: black;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  text-align: center;
+  height: 350px;
+}
+
+.container .title {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: darkgrey;
+  border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.container .title p {
+  font-weight: bolder;
+  color: black;
+}
+
+.login {
+  text-align: center;
+  height: 180px;
+  width: 350px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.login input {
+  float: right;
+  margin-right: 20px;
+  width: 200px;
+  height: 25px;
+}
+
+.login button {
+  margin-top: 15px;
+  width: 180px;
+  height: 30px;
+}
+
+.footer {
+  text-align: center;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.footer p {
+  margin-top: 35px;
+  font-weight: bolder;
+  font-size: 18px;
+}
