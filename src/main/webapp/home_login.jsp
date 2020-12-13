@@ -44,10 +44,8 @@
 
   <br>
 
-  <br>
-
   <div class="footer">
-    <p>版权所有.翻版必究 Copyright:@NewsSystem by Me</p>
+    <p>版权所有.翻版必究 Copyright:@NewsSystem by rogepi</p>
   </div>
 
 </body>
