@@ -1,7 +1,9 @@
 <%@ page import="com.dao.IPostDAO" %>
 <%@ page import="com.bean.Post" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.service.PostDAO" %><%--
+<%@ page import="com.service.PostDAO" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: zzr11
   Date: 2020/12/9
@@ -11,62 +13,67 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 
-<html lang="CN-zh">
+<html lang="zh-CN">
 
 <head>
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="kiben" content="no-cache">
   <meta charset="utf-8" />
-  <meta name="author" content="phpstudy" />
+  <meta name="author" content="rogepi" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/home.css">
-  <title>新闻发布系统</title>
+  <link rel="stylesheet" href="css/universal.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <title>CJ FORUM</title>
+  <link rel="icon" href="images/rowlet.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/rowlet.png" type="image/x-icon" />
 </head>
 
 <body>
 <div class="header">
-  <div class="nav">
-    <ul>
-      <li><a href="./home.jsp">首页</a></li>
-      <li><a href="./my_news.jsp">我的文章</a></li>
-      <li><a href="./new_edit.html">发布文章</a></li>
-      <li><a href="./home_login.jsp">登录</a></li>
-      <li><a href="./about.html">关于我们</a></li>
-    </ul>
-  </div>
+  <h1>CJ FORUM</h1>
+  <p>Everything happens for a reason</p>
 </div>
 
-<br>
+<div class="topnav">
+  <ul>
+    <li><a href="home.jsp">首页</a></li>
+    <li><a href="mine.jsp">我的</a></li>
+    <li><a href="publish.html">发帖</a></li>
+    <li><a href="home_login.jsp">登录</a></li>
+    <li><a href="about.html">关于</a></li>
+  </ul>
+</div>
 
-<div class="main">
-
-  <div class="left">
-    <div class="title">
-      <p>时政要闻</p>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>表白墙</h3>
+      <br>
+      <%
+        IPostDAO iPostDAO = new PostDAO();
+        List<Post> posts = null;
+        try {
+          posts = iPostDAO.findByType("时政");
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+        assert posts != null;
+        for (Post post : posts) { %>
+      <form action="./post.jsp" method="post" id="form<%=post.getId()%>">
+        <label>
+          <input type="text" name="id" value="<%=post.getId()%>">
+        </label>
+        <div class="posta"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
+      </form>
+      <%
+        }
+      %>
     </div>
-    <%
-      IPostDAO iPostDAO = new PostDAO();
-      List<Post> posts = null;
-      try {
-        posts = iPostDAO.findByType("时政");
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-      assert posts != null;
-      for (Post post : posts) { %>
-    <form action="./new_show.jsp" method="post" id="form<%=post.getId()%>">
-      <input style="display:none" type="text" name="id" value="<%=post.getId()%>">
-      <div style="padding-top: 2%;padding-left: 3%;" class="lleft"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
-    </form>
-    <%
-      }
-    %>
   </div>
-
-
-  <div class="right_top">
-    <div class="title">
-      <p>财经*国际</p>
-    </div>
-    <div class="rleft">
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>学习讨论</h3>
+      <br>
       <%
         try {
           posts = iPostDAO.findByType("财经");
@@ -75,65 +82,32 @@
         }
         assert posts != null;
         for (Post post : posts) { %>
-      <form action="./new_show.jsp" method="post" id="form<%=post.getId()%>">
-        <input style="display:none" type="text" name="id" value="<%=post.getId()%>">
-        <div style="padding-top: 2%;padding-left: 3%;" class="lleft"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
+      <form action="./post.jsp" method="post" id="form<%=post.getId()%>">
+        <label>
+          <input type="text" name="id" value="<%=post.getId()%>">
+        </label>
+        <div class="posta"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
       </form>
       <%
         }
       %>
     </div>
-    <div class="rright">
+    <div class="card">
+      <h3>校园生活</h3>
+      <br>
       <%
         try {
-          posts = iPostDAO.findByType("国际");
+          posts = iPostDAO.findByType("财经");
         } catch (Exception e) {
           e.printStackTrace();
         }
         assert posts != null;
         for (Post post : posts) { %>
-      <form action="./new_show.jsp" method="post" id="form<%=post.getId()%>">
-        <input style="display:none" type="text" name="id" value="<%=post.getId()%>">
-        <div style="padding-top: 2%;padding-left: 3%;" class="lleft"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
-      </form>
-      <%
-        }
-      %>
-    </div>
-  </div>
-  <div class="right_bottom">
-    <div class="title">
-      <p>娱乐*体育</p>
-    </div>
-    <div class="rleft">
-      <%
-        try {
-          posts = iPostDAO.findByType("娱乐");
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-        assert posts != null;
-        for (Post post : posts) { %>
-      <form action="./new_show.jsp" method="post" id="form<%=post.getId()%>">
-        <input style="display:none" type="text" name="id" value="<%=post.getId()%>">
-        <div style="padding-top: 2%;padding-left: 3%;" class="lleft"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
-      </form>
-      <%
-        }
-      %>
-    </div>
-    <div class="rright">
-      <%
-        try {
-          posts = iPostDAO.findByType("体育");
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-        assert posts != null;
-        for (Post post : posts) { %>
-      <form action="./new_show.jsp" method="post" id="form<%=post.getId()%>">
-        <input style="display:none" type="text" name="id" value="<%=post.getId()%>">
-        <div style="padding-top: 2%;padding-left: 3%;" class="lleft"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
+      <form action="./post.jsp" method="post" id="form<%=post.getId()%>">
+        <label>
+          <input type="text" name="id" value="<%=post.getId()%>">
+        </label>
+        <div class="posta"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
       </form>
       <%
         }
@@ -142,10 +116,8 @@
   </div>
 </div>
 
-<br>
-
 <div class="footer">
-  <p>版权所有.翻版必究 Copyright:@NewsSystem by rogepi</p>
+  <h2>Copyright:@Forumsys by rogepi</h2>
 </div>
 
 </body>

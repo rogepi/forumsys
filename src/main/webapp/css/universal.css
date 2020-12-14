@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Arial;
+  padding: 10px;
+  background-image: url(../images/image01.jpg);
+  background-size: cover;
+  padding-left: 20%;
+  padding-right: 20%;
+  /* background: #f1f1f1; */
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 18px;
+  text-align: center;
+  /* background-image: url(../images/image01.jpg); */
+  background-size: cover;
+}
+
+.header h1 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.topnav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.topnav li {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Responsive layout - when the screen is less than 
+400px wide, make the navigation links stack on top 
+of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.row .posta {
+  padding-top: 3%;
+  padding-left: 3%;
+}
+
+.row .posta a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bolder;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  /* padding: 20px; */
+  margin-top: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+  animation: cardContainerLoad 2s;
+}
+
+.card h3 {
+  padding: 10px;
+  background-color: #333;
+  text-align: center;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+  background-color: #ddd;
+  color: black;
+}

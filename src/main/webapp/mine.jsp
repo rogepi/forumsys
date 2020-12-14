@@ -1,8 +1,13 @@
+<%@ page import="com.dao.IPostDAO" %>
+<%@ page import="com.service.PostDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.bean.Post" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zzr11
-  Date: 2020/12/9
-  Time: 11:24
+  Date: 2020/12/12
+  Time: 22:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -17,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/universal.css" />
   <link rel="stylesheet" href="css/about.css" />
-  <link rel="stylesheet" href="css/home_login.css" />
+  <link rel="stylesheet" href="css/mine.css" />
   <title>CJ FORUM</title>
   <link rel="icon" href="images/rowlet.png" type="image/x-icon" />
 </head>
@@ -40,10 +45,28 @@
 
 <div class="row">
   <div class="card">
-    <h3>当前登录</h3>
+    <h3>我的贴子</h3>
     <br>
-    <h2><%=session.getAttribute("username_session")%>, 欢迎您</h2>
-    <button onclick="window.location.href='./index.html'">登出</button>
+    <%
+      String author = (String) session.getAttribute("username_session");
+      IPostDAO iPostDAO = new PostDAO();
+      List<Post> posts = null;
+      try {
+        posts = iPostDAO.findByAuthor(author);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      assert posts != null;
+      for (Post post : posts) { %>
+    <form action="./post.jsp" method="post" id="form<%=post.getId()%>">
+      <label>
+        <input type="text" name="id" value="<%=post.getId()%>">
+      </label>
+      <div class="posta"><a href="" onclick="document.getElementById('form<%=post.getId()%>').submit();return false;"><%=post.getTitle()%></a></div>
+    </form>
+    <%
+      }
+    %>
   </div>
 </div>
 

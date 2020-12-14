@@ -1,0 +1,25 @@
+.ifmt {
+  padding-top: 3px;
+  text-align: center;
+}
+
+.ifmt .author {
+  float: left;
+  width: 33%;
+}
+
+.ifmt .type {
+  float: left;
+  width: 33%;
+}
+
+.ifmt .date {
+  float: left;
+  width: 33%;
+}
+
+.content {
+  padding: 20px;
+  padding-top: 50px;
+  font-size: 18px;
+}

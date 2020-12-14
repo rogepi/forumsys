@@ -1,0 +1,32 @@
+.edit {
+  margin: 20px;
+  color: #333;
+}
+
+.edit input {
+  margin-left: 10px;
+}
+
+.edit input[type="text"] {
+  height: 2em;
+  width: 20em;
+}
+
+.edit textarea {
+  margin-left: 8%;
+  margin-right: 10%;
+  resize: none;
+  height: 20em;
+  width: 80%;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.edit button {
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 10%;
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+}

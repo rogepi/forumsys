@@ -1,125 +1,47 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
-.header {
-  border: 1px solid black;
-  border-radius: 0.5em;
-}
-
-.nav {
-  margin-top: 150px;
-  text-align: center;
-}
-
-.header .nav ul {
-  list-style-type: none;
-  overflow: hidden;
-}
-
-.header .nav li {
-  display: inline-block;
-}
-
-.header .nav a {
-  font-weight: bolder;
-  font-size: 20px;
-  color: black;
-  display: block;
-  padding: 20px;
-  text-decoration: none;
-}
-
-.main .left {
-  float: left;
-  width: 30%;
-  height: 660px;
-  border: 1px solid black;
-  border-radius: 0.5em;
-}
-
-.main input {
+.row input {
   display: none;
 }
 
-.title {
-  background-color: darkgrey;
-  border-radius: 0.5em 0.5em 0em 0em;
-  text-align: center;
-}
-
-.title p {
-  font-weight: bolder;
-  font-size: 19px;
-}
-
-.lleft a {
-  color: black;
-  text-decoration: none;
-}
-
-.rleft {
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
   float: left;
-  width: 50%;
+  width: 34%;
 }
 
-.rleft a {
-  color: black;
-  text-decoration: none;
+.leftcolumn .card {
+  min-height: 700px;
 }
 
-.rright {
+/* Right column */
+.rightcolumn {
   float: left;
-  width: 50%;
+  width: 66%;
+  padding-left: 20px;
 }
 
-.rright a {
-  color: black;
-  text-decoration: none;
+.rightcolumn .card {
+  min-height: 340px;
 }
 
-.main .right_top {
-  float: left;
-  margin-left: 10px;
-  width: 69%;
-  height: 400px;
-  border: 1px solid black;
-  border-radius: 0.5em;
+@keyframes cardContainerLoad {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.main .right_bottom {
-  margin-top: 10px;
-  float: left;
-  margin-left: 10px;
-  width: 69%;
-  height: 250px;
-  border: 1px solid black;
-  border-radius: 0.5em;
-}
-
-.main::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-.footer {
-  text-align: center;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 0.5em;
-}
-
-.footer p {
-  margin-top: 35px;
-  font-weight: bolder;
-  font-size: 18px;
+/* Responsive layout - when the screen is less than
+ 800px wide, make the two columns stack on top of 
+ each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
 }

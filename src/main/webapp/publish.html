@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/universal.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/publish.css" />
   <title>CJ FORUM</title>
   <link rel="icon" href="images/rowlet.png" type="image/x-icon" />
 </head>
@@ -30,9 +31,28 @@
 
 <div class="row">
   <div class="card">
-    <h3>关于</h3>
+    <h3>编辑</h3>
     <br>
-    <h2>CJ FORUM Design by rogepi</h2>
+    <div class="edit">
+      <form action="/PostWrite" method="POST">
+        <br>
+        <label>贴子标题：<input type="text" name="title"></label>
+        <br><br>
+        <label>贴子类型：
+          <input type="radio" id="new" name="ntype" value="时政">
+          <label for="new">学习讨论</label>
+          <input type="radio" id="money" name="ntype" value="财经">
+          <label for="money">校园生活</label>
+          <input type="radio" id="intnl" name="ntype" value="国际">
+          <label for="intnl">表白墙</label>
+        </label>
+        <br><br>
+        <label>贴子内容：<br>
+          <textarea rows="10" name="content"></textarea>
+        </label>
+        <button type="submit">发布</button>
+      </form>
+    </div>
   </div>
 </div>
 

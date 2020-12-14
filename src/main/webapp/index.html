@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 
-<html lang="CN-zh">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8" />
   <meta name="author" content="rogepi" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>新闻发布系统</title>
+  <link rel="stylesheet" href="css/universal.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <title>CJ FORUM</title>
+  <link rel="icon" href="images/rowlet.png" type="image/x-icon" />
 </head>
 
 <body>
 <div class="header">
-  <div class="nav">
-    <ul>
-      <li><a href="#">首页</a></li>
-      <li><a href="#">我的文章</a></li>
-      <li><a href="#">发布文章</a></li>
-      <li><a href="#">登录</a></li>
-      <li><a href="#">关于我们</a></li>
-    </ul>
-  </div>
+  <h1>CJ FORUM</h1>
+  <p>Everything happens for a reason</p>
 </div>
 
-<br>
-
-<div class="container">
-  <div class="title">
-    <p>用户登录</p>
-  </div>
-  <div class="login">
-    <form action="loginCheck" method="post">
-      <br>
-      <label>用户名： <input type="text" name="username"></label>
-      <br><br>
-      <label>密 码：<input type="password" name="userpwd"></label>
-      <br><br>
-      <button type="submit">登录</button>
-    </form>
-  </div>
-  <br>
-  <a href="./signup.html">新用户注册</a>
+<div class="topnav">
+  <ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">我的</a></li>
+    <li><a href="#">发帖</a></li>
+    <li><a href="#">登录</a></li>
+    <li><a href="#">关于</a></li>
+  </ul>
 </div>
 
-<br>
+<div class="row">
+  <div class="card">
+    <h3>登录</h3>
+    <br>
+    <div class="login">
+      <form action="loginCheck" method="post">
+        <br>
+        <label>用户名：<input type="text" name="username"></label>
+        <br><br>
+        <label>密 码：<input type="password" name="userpwd"></label>
+        <br><br>
+        <button type="submit">登录</button>
+      </form>
+    </div>
+    <br>
+    <a href="./signup.html">新用户注册</a>
+  </div>
+</div>
 
 <div class="footer">
-  <p>版权所有.翻版必究 Copyright:@NewsSystem by rogepi</p>
+  <h2>Copyright:@Forumsys by rogepi</h2>
 </div>
 
 </body>
+
 </html>

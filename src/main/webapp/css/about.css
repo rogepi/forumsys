@@ -1,0 +1,19 @@
+.row .card {
+  min-height: 700px;
+}
+
+.row h2 {
+  text-align: center;
+  margin-top: 200px;
+}
+
+@keyframes cardContainerLoad {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

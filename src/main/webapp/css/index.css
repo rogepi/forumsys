@@ -1,0 +1,35 @@
+.row {
+  text-align: center;
+}
+
+.login {
+  text-align: center;
+  height: 180px;
+  width: 350px;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.login input {
+  float: right;
+  margin-right: 20px;
+  width: 200px;
+  height: 25px;
+}
+
+.login button {
+  margin-top: 15px;
+  width: 180px;
+  height: 30px;
+}
+
+.row a {
+  color: #333;
+}
