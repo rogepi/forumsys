@@ -53,7 +53,7 @@
         IPostDAO iPostDAO = new PostDAO();
         List<Post> posts = null;
         try {
-          posts = iPostDAO.findByType("时政");
+          posts = iPostDAO.findByType("表白墙");
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -76,7 +76,7 @@
       <br>
       <%
         try {
-          posts = iPostDAO.findByType("财经");
+          posts = iPostDAO.findByType("学习讨论");
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -97,7 +97,7 @@
       <br>
       <%
         try {
-          posts = iPostDAO.findByType("财经");
+          posts = iPostDAO.findByType("校园生活");
         } catch (Exception e) {
           e.printStackTrace();
         }

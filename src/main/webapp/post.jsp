@@ -53,7 +53,7 @@
         e.printStackTrace();
       }
       assert post1 != null;%>
-    <h3>《习近平在二十国集团领导人第十五次峰会上的讲话》单行本出版</h3>
+    <h3><%=post1.getTitle()%></h3>
     <div class="ifmt">
       <div class="author">
         <p>作者：<%=post1.getAuthor()%></p>

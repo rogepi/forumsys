@@ -31,7 +31,7 @@ public class PostWrite extends HttpServlet {
     IPostDAO iPostDAO = new PostDAO();
     try {
       iPostDAO.create(post);
-      response.sendRedirect("/my_news.jsp");
+      response.sendRedirect("/mine.jsp");
     } catch (Exception e) {
       e.printStackTrace();
       String info = "文章录入失败";

@@ -909,76 +909,104 @@ SELECT|sys.sys_config
       <ObjectGrants>SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,RELOAD,SHUTDOWN,PROCESS,FILE,REFERENCES,INDEX,ALTER,SHOW DATABASES,SUPER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,REPLICATION SLAVE,REPLICATION CLIENT,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,CREATE USER,EVENT,TRIGGER,CREATE TABLESPACE,CREATE ROLE,DROP ROLE!
 </ObjectGrants>
     </user>
-    <table id="284" parent="2" name="post">
+    <table id="284" parent="2" name="comment"/>
+    <table id="285" parent="2" name="post">
       <Engine>MyISAM</Engine>
       <Collation>gbk_chinese_ci</Collation>
     </table>
-    <table id="285" parent="2" name="user"/>
-    <column id="286" parent="284" name="id">
+    <table id="286" parent="2" name="user"/>
+    <column id="287" parent="284" name="id">
       <Position>1</Position>
-      <Comment>//序号</Comment>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="287" parent="284" name="title">
+    <column id="288" parent="284" name="post_id">
       <Position>2</Position>
-      <Comment>//标题</Comment>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int|0s</DataType>
     </column>
-    <column id="288" parent="284" name="author">
+    <column id="289" parent="284" name="author">
       <Position>3</Position>
-      <Comment>//作者</Comment>
-      <DataType>varchar(128)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="289" parent="284" name="type">
-      <Position>4</Position>
-      <Comment>//类型</Comment>
-      <DataType>varchar(40)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(20)|0s</DataType>
     </column>
     <column id="290" parent="284" name="content">
-      <Position>5</Position>
-      <Comment>//文章内容</Comment>
+      <Position>4</Position>
       <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="291" parent="284" name="date">
-      <Position>6</Position>
-      <Comment>//发布日期</Comment>
+    <column id="291" parent="284" name="data">
+      <Position>5</Position>
       <DataType>date|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <key id="292" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="293" parent="285" name="uid">
+    <column id="293" parent="285" name="id">
+      <Position>1</Position>
+      <Comment>//序号</Comment>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="294" parent="285" name="title">
+      <Position>2</Position>
+      <Comment>//标题</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="295" parent="285" name="author">
+      <Position>3</Position>
+      <Comment>//作者</Comment>
+      <DataType>varchar(128)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="296" parent="285" name="type">
+      <Position>4</Position>
+      <Comment>//类型</Comment>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="297" parent="285" name="content">
+      <Position>5</Position>
+      <Comment>//文章内容</Comment>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="298" parent="285" name="date">
+      <Position>6</Position>
+      <Comment>//发布日期</Comment>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="299" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="300" parent="286" name="uid">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="294" parent="285" name="name">
+    <column id="301" parent="286" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="295" parent="285" name="passwd">
+    <column id="302" parent="286" name="passwd">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="296" parent="285" name="sex">
+    <column id="303" parent="286" name="sex">
       <Position>4</Position>
       <DataType>varchar(5)|0s</DataType>
     </column>
-    <column id="297" parent="285" name="rtime">
+    <column id="304" parent="286" name="rtime">
       <Position>5</Position>
       <DataType>date|0s</DataType>
     </column>
-    <key id="298" parent="285" name="PRIMARY">
+    <key id="305" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>
