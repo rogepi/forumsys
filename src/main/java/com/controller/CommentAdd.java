@@ -1,8 +1,8 @@
 package com.controller;
 
-import com.bean.Post;
-import com.dao.IPostDAO;
-import com.service.PostDAO;
+import com.bean.Comment;
+import com.dao.iCommentDAO;
+import com.service.CommentDAO;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,43 +10,41 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/PostWrite")
-public class PostWrite extends HttpServlet {
-@Override
+@WebServlet("/CommentAdd")
+public class CommentAdd extends HttpServlet {
+  @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     request.setCharacterEncoding("UTF-8");
-    String title = request.getParameter("title");
+    int post_id = Integer.parseInt(request.getParameter("post_id").toString().trim());
     HttpSession session = request.getSession();
     String author = (String) session.getAttribute("username_session");
-    String type = request.getParameter("ntype");
     String content = request.getParameter("content");
 
-    Post post = new Post();
-    post.setTitle(title);
-    post.setAuthor(author);
-    post.setType(type);
-    post.setContent(content);
+    Comment comment = new Comment();
+    comment.setPost_id(post_id);
+    comment.setAuthor(author);
+    comment.setContent(content);
 
-    IPostDAO iPostDAO = new PostDAO();
+    iCommentDAO iCommentDAO = new  CommentDAO();
     try {
-      iPostDAO.create(post);
-      post = iPostDAO.findByTitle(post);
+      iCommentDAO.create(comment);
       response
           .getWriter()
           .print(
               "<script type=\"text/javascript\">\n"
-                  + "window.location.href='post.jsp?id="+post.getId()+"'\n"
+                  + "window.location.href='post.jsp?id="+post_id +"'\n"
                   + "</script>");
+//      response.sendRedirect("/mine.jsp");
     } catch (Exception e) {
       e.printStackTrace();
-      String info = "文章录入失败";
+      String info = "评论失败失败";
       request.setAttribute("outputMessage",info);
       response.sendRedirect("/info.jsp");
     }
-}
+  }
 
-@Override
+  @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     doPost(request,response);

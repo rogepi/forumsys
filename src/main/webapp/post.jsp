@@ -1,6 +1,11 @@
 <%@ page import="com.dao.IPostDAO" %>
 <%@ page import="com.service.PostDAO" %>
-<%@ page import="com.bean.Post" %><%--
+<%@ page import="com.bean.Post" %>
+<%@ page import="com.service.CommentDAO" %>
+<%@ page import="com.dao.iCommentDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.bean.Comment" %>
+<%--
   Created by IntelliJ IDEA.
   User: zzr11
   Date: 2020/12/11
@@ -19,6 +24,7 @@
   <link rel="stylesheet" href="css/universal.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/post.css" />
+  <script src="js/post.js"></script>
   <title>CJ FORUM</title>
   <link rel="icon" href="images/rowlet.png" type="image/x-icon" />
 </head>
@@ -69,6 +75,47 @@
       <%=post1.getContent()%>
     </div>
   </div>
+
+  <div class="card comment">
+    <hr>
+    <div class="title">
+      <div class="text">
+        <h3>评论</h3>
+      </div>
+      <div class="btn">
+        <button onclick="input_show()">+</button>
+      </div>
+    </div><br>
+    <div class="cinput" id="ci" style="display: none;">
+      <form action="CommentAdd" method="post">
+        <input type="text" id="content" name="content">
+        <input style="display: none" type="text" id="post_id" name="post_id" value="<%=post1.getId()%>">
+        <div class="btn">
+          <button type="submit">评论</button>
+        </div>
+      </form>
+    </div>
+    <br>
+    <div class="comments">
+      <%
+        iCommentDAO icommentdao = new CommentDAO();
+        List<Comment> comments = null;
+        try {
+          comments =  icommentdao.findByPostId(post1);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+        assert comments != null;
+        for (Comment comment : comments) {
+          %>
+      <h5><%=comment.getAuthor()%> : <%=comment.getContent()%></h5>
+      <br>
+      <%
+        }
+      %>
+    </div>
+  </div>
+
 </div>
 
 <div class="footer">

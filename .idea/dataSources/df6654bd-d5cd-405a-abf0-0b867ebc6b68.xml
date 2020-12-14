@@ -933,7 +933,7 @@ SELECT|sys.sys_config
       <Position>4</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="291" parent="284" name="data">
+    <column id="291" parent="284" name="date">
       <Position>5</Position>
       <DataType>date|0s</DataType>
     </column>

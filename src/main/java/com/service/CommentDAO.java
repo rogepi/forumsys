@@ -14,9 +14,9 @@ import java.util.List;
 
 public class CommentDAO implements iCommentDAO {
 
-  protected static final String FIELDS_INSERT = "id, post_id, author, content, date";
+  protected static final String FIELDS_INSERT = "id,post_id,author,content,date";
   protected static String INSERT_SQL =
-      "insert into post (" + FIELDS_INSERT + ")" + "values(0,?,?,?,NOW())";
+      "insert into comment (" + FIELDS_INSERT + ")" + "values(0,?,?,?,NOW())";
   protected static String SELECT_SQL = "select " + FIELDS_INSERT + " from post where id=?";
   protected static String SELECT_SQL2 = "select " + FIELDS_INSERT + " from post where post_id=?";
   protected static String UPDATE_SQL =

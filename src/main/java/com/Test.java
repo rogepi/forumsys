@@ -1,16 +1,17 @@
 package com;
 
-import com.bean.Post;
-import com.dao.IPostDAO;
-import com.service.PostDAO;
-import java.util.List;
+import com.bean.Comment;
+import com.dao.iCommentDAO;
+import com.service.CommentDAO;
+
 
 public class Test {
   public static void main(String[] args) throws Exception {
-    IPostDAO iPostDAO = new PostDAO();
-    List<Post> posts = iPostDAO.findAll();
-    for (Post post : posts) {
-      System.out.println(post.toString());
-    }
+    iCommentDAO icommentdao = new CommentDAO();
+    Comment comment = new Comment();
+    comment.setPost_id(14);
+    comment.setAuthor("user1");
+    comment.setContent("怎么有人没水啊？！");
+    icommentdao.create(comment);
   }
 }

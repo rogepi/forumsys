@@ -1,3 +1,83 @@
+.row {
+  animation: cardContainerLoad 2s;
+}
+
+.row .card {
+  min-height: auto;
+  animation: none;
+}
+
+.row .comment {
+  margin-top: 0;
+}
+
+.row hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.comment .title {
+  position: relative;
+  float: left;
+  height: 45px;
+  width: 100%;
+  background-color: white;
+}
+
+.comment .title .text {
+  float: left;
+  height: 30px;
+  width: 80%;
+  margin-right: 0;
+}
+
+.comment .title .btn {
+  float: right;
+  margin: 5px;
+  margin-right: 20px;
+}
+
+.comment .title .btn button {
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+}
+
+.comment .title h3 {
+  padding-left: 20px;
+  background-color: white;
+  text-align: left;
+  color: #333;
+}
+
+.comment .cinput {
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.comment .cinput input {
+  float: left;
+  height: 40px;
+  width: 80%;
+}
+
+.comment .cinput .btn {
+  float: right;
+  height: 40px;
+  width: 20%;
+}
+
+.comment .cinput .btn button {
+  margin-left: 20px;
+  height: 40px;
+  width: 50%;
+}
+
+.comment .comments {
+  margin: 20px;
+}
+
 .ifmt {
   padding-top: 3px;
   text-align: center;
