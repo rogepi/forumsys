@@ -4,8 +4,6 @@ import com.bean.User;
 import com.dao.IUserDAO;
 import com.service.UserDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +13,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/loginCheck")
 public class loginCheck extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     String userName = request.getParameter("username");
     String userPwd = request.getParameter("userpwd");
     String info;
@@ -31,7 +29,6 @@ public class loginCheck extends HttpServlet {
     }
     HttpSession session = request.getSession();
     response.setContentType("text/html;charset=utf-8");
-    PrintWriter out = response.getWriter();
     switch (i) {
       case -1:
         info = "用户名不存在";
@@ -56,7 +53,7 @@ public class loginCheck extends HttpServlet {
   }
 
   public void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     doPost(request, response);
   }
 }

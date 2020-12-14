@@ -9,8 +9,9 @@ public class Post {
   private java.sql.Date date;
 
   public Post() {}
-  public Post(int id, String title, String author, String type,
-      String content, java.sql.Date date) {
+
+  public Post(
+      int id, String title, String author, String type, String content, java.sql.Date date) {
     this.id = id;
     this.title = title;
     this.author = author;
@@ -69,13 +70,24 @@ public class Post {
 
   @Override
   public String toString() {
-    return "Post{" +
-        "id=" + id +
-        ", title='" + title + '\'' +
-        ", author='" + author + '\'' +
-        ", type='" + type + '\'' +
-        ", content='" + content + '\'' +
-        ", date='" + date + '\'' +
-        '}';
+    return "Post{"
+        + "id="
+        + id
+        + ", title='"
+        + title
+        + '\''
+        + ", author='"
+        + author
+        + '\''
+        + ", type='"
+        + type
+        + '\''
+        + ", content='"
+        + content
+        + '\''
+        + ", date='"
+        + date
+        + '\''
+        + '}';
   }
 }

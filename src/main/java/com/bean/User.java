@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.util.Date;
-
 public class User {
   private int uid;
   private String name;
@@ -9,7 +7,7 @@ public class User {
   private String sex;
   private java.sql.Date rtime;
 
-  public User(){
+  public User() {
     this.sex = "man";
   }
 
@@ -63,12 +61,20 @@ public class User {
 
   @Override
   public String toString() {
-    return "User{" +
-        "uid=" + uid +
-        ", name='" + name + '\'' +
-        ", passwd='" + passwd + '\'' +
-        ", sex='" + sex + '\'' +
-        ", rtime=" + rtime +
-        '}';
+    return "User{"
+        + "uid="
+        + uid
+        + ", name='"
+        + name
+        + '\''
+        + ", passwd='"
+        + passwd
+        + '\''
+        + ", sex='"
+        + sex
+        + '\''
+        + ", rtime="
+        + rtime
+        + '}';
   }
 }

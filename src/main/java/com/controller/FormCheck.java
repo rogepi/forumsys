@@ -2,7 +2,6 @@ package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,13 +12,13 @@ public class FormCheck extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     doPost(request, response);
   }
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
     request.setCharacterEncoding("UTF-8");
@@ -29,7 +28,7 @@ public class FormCheck extends HttpServlet {
       out.print("用户名不存在");
     } else {
 
-      if ("".equals(userpwd)) {
+      if (!"".equals(userpwd)) {
         if (!"123".equals(userpwd)) {
           out.print("欢迎您" + userpwd);
         } else {
