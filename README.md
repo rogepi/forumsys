@@ -9,3 +9,11 @@ Java版本：jdk-11.0.8
 数据库：MySQL 8.0.22
 
 依赖管理：Maven
+
+MVC设计模式：
+
+1.Model-com.bean、com.dao、com.db
+
+2.View-jsp、html
+
+3.Service-com.controller
