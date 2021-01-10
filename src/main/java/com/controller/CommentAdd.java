@@ -16,11 +16,10 @@ public class CommentAdd extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     request.setCharacterEncoding("UTF-8");
-    int post_id = Integer.parseInt(request.getParameter("post_id").toString().trim());
+    int post_id = Integer.parseInt(request.getParameter("post_id").trim());
     HttpSession session = request.getSession();
     String author = (String) session.getAttribute("username_session");
     String content = request.getParameter("content");
-
     Comment comment = new Comment();
     comment.setPost_id(post_id);
     comment.setAuthor(author);
